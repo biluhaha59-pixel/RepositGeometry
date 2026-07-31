@@ -1,19 +1,13 @@
 {
-  "name": "Reposit Geometry",
-  "short_name": "Geometry",
-  "description": "Protótipo gratuito, mobile-first e offline inspirado em Geometry Dash.",
+  "name": "Geometry Clash",
+  "short_name": "GeoClash",
+  "description": "Geometry Dash multiplayer – duas faixas, uma música!",
   "start_url": "./",
-  "scope": "./",
   "display": "fullscreen",
   "orientation": "landscape",
   "background_color": "#08091a",
   "theme_color": "#08091a",
   "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
   ]
 }

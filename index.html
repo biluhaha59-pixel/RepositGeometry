@@ -3,44 +3,97 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#08091a" />
-    <meta name="description" content="Protótipo gratuito, mobile-first e offline inspirado em Geometry Dash." />
+    <meta name="theme-color" content="$08091a" />
+    <meta name="description" content="Geometry Dash Multiplayer - duas faixas, uma música, quem sobrevive mais?" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="icon.svg" type="image/svg+xml" />
-    <title>Reposit Geometry</title>
+    <title>Geometry Clash</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app">
-      <section class="hud" aria-label="Informações do jogo">
-        <div>
-          <span class="label">Distância</span>
-          <strong id="distance">0m</strong>
+
+      <!-- HUD topo -->
+      <section class="hud" aria-label="HUD do jogo">
+        <!-- Player 1 info (esquerda) -->
+        <div class="hud-player p1-hud">
+          <span class="player-label p1-color">▲ P1</span>
+          <span class="hud-score" id="score1">0</span>
+          <div class="combo-display" id="combo1"></div>
         </div>
-        <div>
-          <span class="label">Seed</span>
-          <strong id="seedLabel">---</strong>
+
+        <!-- Centro: progresso e round -->
+        <div class="hud-center">
+          <div class="round-badge" id="roundBadge">ROUND 1</div>
+          <div class="progress-track">
+            <div class="progress-bar p1-bar" id="progressBar1"></div>
+            <div class="progress-bar p2-bar" id="progressBar2"></div>
+            <div class="progress-ship p1-ship" id="progressShip1">▲</div>
+            <div class="progress-ship p2-ship" id="progressShip2">▼</div>
+          </div>
+          <span class="progress-pct" id="progressPct">0%</span>
         </div>
-        <div>
-          <span class="label">BPM</span>
-          <strong id="bpmLabel">120</strong>
+
+        <!-- Player 2 info (direita) -->
+        <div class="hud-player p2-hud">
+          <span class="player-label p2-color">▼ P2</span>
+          <span class="hud-score" id="score2">0</span>
+          <div class="combo-display" id="combo2"></div>
         </div>
       </section>
 
-      <canvas id="game" aria-label="Protótipo offline estilo Geometry Dash"></canvas>
+      <!-- Canvas principal -->
+      <canvas id="game" aria-label="Geometry Clash - jogo multiplayer"></canvas>
 
+      <!-- Overlay de powerup -->
+      <div class="powerup-toast" id="powerupToast"></div>
+
+      <!-- Painel central -->
       <section class="panel" id="panel">
-        <h1>Reposit Geometry</h1>
-        <p>
-          Protótipo HTML gratuito, feito para celular e individual/offline. Publique no
-          GitHub Pages e jogue pelo navegador do telefone, sem PC e sem pagar hospedagem.
-        </p>
-        <div class="actions">
-          <button id="startBtn" type="button">Jogar</button>
-          <button id="newSeedBtn" type="button" class="secondary">Nova fase</button>
+        <h1 id="panelTitle">Geometry<br>Clash</h1>
+        <p id="panelDesc">Duas faixas. Uma música. Quem sobrevive mais tempo vence!</p>
+
+        <div class="mode-selector" id="modeSelector">
+          <button class="mode-btn active" id="modeVsBot" type="button">
+            <span class="mode-icon">🤖</span>
+            <span>vs Bot</span>
+          </button>
+          <button class="mode-btn" id="modeLocal" type="button">
+            <span class="mode-icon">👥</span>
+            <span>Local 2P</span>
+          </button>
         </div>
-        <p class="hint">Toque na tela para pular. No celular, use “Adicionar à tela inicial” para abrir como app.</p>
+
+        <div class="controls-hint">
+          <div class="ctrl p1-ctrl"><span class="p1-color">P1 (cima)</span> — Espaço / Toque esq.</div>
+          <div class="ctrl p2-ctrl"><span class="p2-color">P2 (baixo)</span> — Enter / Toque dir.</div>
+        </div>
+
+        <div class="actions">
+          <button id="startBtn" type="button">▶ Jogar</button>
+          <button id="retryBtn" type="button" class="secondary hidden">↺ Revanche</button>
+        </div>
+
+        <p class="hint">Ative o som antes de jogar!</p>
       </section>
+
+      <!-- Resultado final -->
+      <section class="result-panel hidden" id="resultPanel">
+        <div class="result-winner" id="resultWinner"></div>
+        <div class="result-scores">
+          <div class="result-score p1-result">
+            <span class="p1-color">P1</span>
+            <strong id="finalScore1">0</strong>
+          </div>
+          <div class="result-vs">VS</div>
+          <div class="result-score p2-result">
+            <strong id="finalScore2">0</strong>
+            <span class="p2-color">P2</span>
+          </div>
+        </div>
+        <button id="playAgainBtn" type="button">↺ Jogar de novo</button>
+      </section>
+
     </main>
 
     <script src="game.js" type="module"></script>
