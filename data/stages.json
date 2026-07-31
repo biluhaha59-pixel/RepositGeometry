@@ -1,0 +1,22 @@
+{
+  "defaultStage": "pulse-runner",
+  "stages": [
+    {
+      "id": "pulse-runner",
+      "name": "Pulse Runner",
+      "bpm": 126,
+      "gravity": 2350,
+      "jumpVelocity": 860,
+      "speed": 390,
+      "seed": 7319,
+      "palette": {
+        "skyTop": "#10164d",
+        "skyBottom": "#08091a",
+        "ground": "#171a3b",
+        "grid": "#2ff3ff",
+        "player": "#ffe84a",
+        "obstacle": "#ff3d7f"
+      }
+    }
+  ]
+}

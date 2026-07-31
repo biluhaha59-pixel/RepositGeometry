@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Reposit Geometry icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10164d"/>
+      <stop offset="1" stop-color="#08091a"/>
+    </linearGradient>
+    <linearGradient id="cube" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#48f3ff"/>
+      <stop offset="1" stop-color="#ff3df2"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <path d="M72 368h368" stroke="#48f3ff" stroke-width="28" stroke-linecap="round" opacity=".85"/>
+  <path d="M304 350l56-112 56 112z" fill="#ff3d7f"/>
+  <rect x="116" y="166" width="128" height="128" rx="18" fill="url(#cube)" transform="rotate(12 180 230)"/>
+  <circle cx="158" cy="211" r="14" fill="#08091a"/>
+  <circle cx="206" cy="211" r="14" fill="#08091a"/>
+</svg>

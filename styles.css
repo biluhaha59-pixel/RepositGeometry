@@ -1,0 +1,133 @@
+:root {
+  color-scheme: dark;
+  --bg: #08091a;
+  --fg: #f7f7ff;
+  --muted: #a7add4;
+  --accent: #48f3ff;
+  --accent-2: #ff3df2;
+  --danger: #ff4b67;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  touch-action: manipulation;
+  background: radial-gradient(circle at 50% 20%, #1c2160 0%, var(--bg) 58%);
+  color: var(--fg);
+  font-family: Inter, ui-rounded, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.app {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+#game {
+  width: 100vw;
+  height: 100dvh;
+  display: block;
+}
+
+.hud {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  left: max(12px, env(safe-area-inset-left));
+  right: max(12px, env(safe-area-inset-right));
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.hud div,
+.panel {
+  border: 1px solid rgb(255 255 255 / 16%);
+  background: rgb(8 9 26 / 72%);
+  box-shadow: 0 16px 50px rgb(0 0 0 / 35%);
+  backdrop-filter: blur(16px);
+}
+
+.hud div {
+  min-width: 82px;
+  padding: 9px 11px;
+  border-radius: 16px;
+}
+
+.label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hud strong {
+  font-size: 1rem;
+}
+
+.panel {
+  position: fixed;
+  left: 50%;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  z-index: 3;
+  width: min(92vw, 540px);
+  padding: 22px;
+  border-radius: 28px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.panel.hidden {
+  display: none;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 10vw, 4rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px var(--accent), 0 0 28px var(--accent-2);
+}
+
+p {
+  margin: 0 auto 16px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+button {
+  min-height: 52px;
+  border: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #050617;
+  font: inherit;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+button.secondary {
+  background: #242850;
+  color: var(--fg);
+}
+
+.hint {
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+}
