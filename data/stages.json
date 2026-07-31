@@ -1,21 +1,31 @@
 {
-  "defaultStage": "pulse-runner",
+  "defaultStage": "gut-genug",
   "stages": [
     {
-      "id": "pulse-runner",
-      "name": "Pulse Runner",
-      "bpm": 126,
-      "gravity": 2350,
-      "jumpVelocity": 860,
-      "speed": 390,
-      "seed": 7319,
+      "id": "gut-genug",
+      "name": "Gut Genug",
+      "bpm": 85,
+      "songFile": "audio/gut_genug.mp3",
+      "songDuration": 123.95,
+      "gravity": 2100,
+      "jumpVelocity": 820,
+      "speed": 320,
       "palette": {
         "skyTop": "#10164d",
         "skyBottom": "#08091a",
-        "ground": "#171a3b",
+        "ground": "#141630",
         "grid": "#2ff3ff",
-        "player": "#ffe84a",
-        "obstacle": "#ff3d7f"
+        "p1": "#ffe84a",
+        "p2": "#48f3ff",
+        "obstacle": "#ff3d7f",
+        "obstacleR2": "#ff6a00"
+      },
+      "round2": {
+        "speedMult": 1.45,
+        "gravityMult": 1.2,
+        "jumpMult": 1.15,
+        "obstacleChance": 0.72,
+        "description": "Mais rápido, mais obstáculos, mais dificuldade!"
       }
     }
   ]
